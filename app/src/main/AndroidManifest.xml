@@ -97,6 +97,30 @@
                 android:resource="@xml/shiguangschedule_list_vertical_widget" />
         </receiver>
 
+        <receiver
+            android:name=".widget.wide_double_days.WideDoubleDaysNativeProvider"
+            android:exported="false"
+            android:label="@string/widget_name_wide_double_days">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/shiguangschedule_wide_double_days_widget" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.wide_list_vertical.WideListVerticalNativeProvider"
+            android:exported="false"
+            android:label="@string/widget_name_wide_list_vertical">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/shiguangschedule_wide_list_vertical_widget" />
+        </receiver>
+
 
 
         <provider

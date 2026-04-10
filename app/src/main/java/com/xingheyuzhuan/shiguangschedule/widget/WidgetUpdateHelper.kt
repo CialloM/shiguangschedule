@@ -17,13 +17,17 @@ import com.xingheyuzhuan.shiguangschedule.widget.list_vertical.ListVerticalNativ
 import com.xingheyuzhuan.shiguangschedule.widget.list_vertical.ListVerticalNativeRenderer
 import com.xingheyuzhuan.shiguangschedule.widget.tiny.TinyNativeProvider
 import com.xingheyuzhuan.shiguangschedule.widget.tiny.TinyNativeRenderer
+import com.xingheyuzhuan.shiguangschedule.widget.wide_double_days.WideDoubleDaysNativeProvider
+import com.xingheyuzhuan.shiguangschedule.widget.wide_double_days.WideDoubleDaysNativeRenderer
+import com.xingheyuzhuan.shiguangschedule.widget.wide_list_vertical.WideListVerticalNativeProvider
+import com.xingheyuzhuan.shiguangschedule.widget.wide_list_vertical.WideListVerticalNativeRenderer
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withTimeoutOrNull
 import java.time.LocalDate
 
 /**
  * 小组件统一分发中心
- * 负责从 Repository 提取数据并分发给所有 5 种规格的原生 Renderer
+ * 负责从 Repository 提取数据并分发给所有 6 种规格的原生 Renderer
  */
 suspend fun updateAllWidgets(context: Context) {
     try {
@@ -89,7 +93,9 @@ suspend fun updateAllWidgets(context: Context) {
             TinyNativeProvider::class.java to TinyNativeRenderer::render,
             CompactNativeProvider::class.java to CompactNativeRenderer::render,
             DoubleDaysNativeProvider::class.java to DoubleDaysNativeRenderer::render,
-            ListVerticalNativeProvider::class.java to ListVerticalNativeRenderer::render
+            ListVerticalNativeProvider::class.java to ListVerticalNativeRenderer::render,
+            WideDoubleDaysNativeProvider::class.java to WideDoubleDaysNativeRenderer::render,
+            WideListVerticalNativeProvider::class.java to WideListVerticalNativeRenderer::render
         )
 
         // 5. 统一分发更新
